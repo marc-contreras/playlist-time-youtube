@@ -1,13 +1,9 @@
 function timeToSeconds(time) {
   const parts = time.split(":").map(Number);
 
-  // Si tiene formato hh:mm:ss
-  if (parts.length === 3) {
-    return parts[0] * 3600 + parts[1] * 60 + parts[2];
-  }
-
-  // Si tiene formato mm:ss
-  return parts[0] * 60 + parts[1];
+  return parts.length === 3
+    ? parts[0] * 3600 + parts[1] * 60 + parts[2]  // Si tiene formato hh:mm:ss
+    : parts[0] * 60 + parts[1]; // Si tiene formato mm:ss
 }
 
 setTimeout(() => {
